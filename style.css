@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all linear 0.3s;
+}
+body.show_aside{
+  transform:translateX(-350px);
+  transition: all linear 0.3s;
+}
+/* NAVBAR */
+.navbar{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28vh;
+  width: 100vw;
+  z-index: 10;
+  background-image: linear-gradient(to right, #7b15bf, #5e1ca3, #451c85, #2f1968, #1d134b, #171043, #120c3a, #0f0632, #0e083c, #0e0945, #10094f, #120759);
+  color: white;
+  box-shadow: -6px 5px 27px 0px rgba(0,0,0,0.92);
+  
+}
+.navbar .clock{
+  font-size: 4rem;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.weatherbtn,.reminderbtn,.taskbtn{
+  border: none;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 0.3rem;
+  border-radius: 2px;
+  background-color: rgb(41, 40, 40);
+  color: white;
+  cursor: pointer;
+}
+
+.weatherbtn:focus,.reminderbtn:focus,.taskbtn:focus{
+outline: 0;
+}
+.weatherbtn:hover,.reminderbtn:hover,.taskbtn:hover{
+background-color: white;
+color: #000;
+transition:all ease-in 0.5s;
+}
+.drops{
+  position:absolute;
+  bottom: 8px;
+}
+.drops .fas.fa-sort-down{
+display: block;
+}
+.taskbtn{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+/* DISPLAY */
+.display{
+  width: 100vw;
+  background-color: rgba(27, 26, 26,1);
+  color: white;
+  height:150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-150px);
+  position: absolute;
+  z-index: 5;
+  transition: all linear 0.5s;
+  font-size: 2rem;
+  
+}
+.display.show_display{
+  transform: translateY(0px);
+  transition: all linear 0.5s;
+}
+.display.show_input{
+  transform: translateY(0px);
+  transition: all linear 0.5s;
+}
+.display .feelslike{
+  display: inline;
+}
+.display .reminput{
+  /* display: none; */
+  width: 800px;
+}
+.display .reminput .inputtext{
+  width: 60%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.display .reminput .hour{
+  width:50px;
+  padding:0.5rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+}
+.display .reminput .minutes{
+  width:50px;
+  padding:0.5rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+}
+.display .reminput .format{
+  border: none;
+  border-radius: 3px;
+  padding:0.5rem;
+}
+.rembtn{
+  border: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  background-color: rgb(41, 40, 40);
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  display: block;
+}
+.rembtn:hover{
+  background-color: white;
+  color: #000;
+  transition:all ease-in 0.5s;
+}
+.rembtn:focus,.display .reminput input:focus{
+  outline: none;
+}
+.weatherdisplay{
+display: flex;
+align-items: center;
+justify-content:center;
+padding:1rem;
+}
+.weatherdisplay .feelslike{
+  margin-right: 10px;
+}
+.weatherdisplay .temperature{
+  margin-right: 10px;
+}
+.idno{
+  display: none;
+}
+/* GALLERY */
+.gallery{
+  height:72vh;
+  width: 100vw;
+  position: relative;
+  color: white;
+  background:url(https://source.unsplash.com/random) no-repeat center center/cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+.gallerycontainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.reminders ul{
+  list-style-type: none;
+  margin-top: 50px;
+  padding: 0;
+}
+.reminders li{
+  margin-bottom: 20px;
+}
+.remtext{
+  font-size: 25px;
+  text-decoration: underline;
+  text-underline-position:under;
+}
+.remtime{
+  text-decoration: none !important;
+  background-color: #2f1968;
+  padding: 5px;
+  margin-left: 8px;
+}
+.remclose{
+  background-color: rgb(184, 91, 91);
+  padding: 5px 8px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.remclose:hover{
+  background-color: red;
+}
+.alarm_notify{
+  animation:blinkingText 1.2s infinite;
+}
+.quoteparah{
+  font-style: italic;
+}
+.quoteauthor{
+  font-weight: bolder;
+}
+/* ASIDE */
+.taskaside{
+  position:fixed;
+  background-image: linear-gradient(to bottom, #262626, #3b3b3b, #525252, #6a6a6a, #838383, #838383, #838383, #838383, #6a6a6a, #525252, #3b3b3b, #262626);
+  color: aliceblue;
+  top:0;
+  right:0;
+  height: 100vh;
+  width: 350px;
+  transform:translateX(350px);
+}
+.taskaside h3{
+  border-bottom: white 2px solid;
+  padding: 10px;
+}
+.taskaside input{
+  width: 95%;
+  padding: 7px;
+}
+.taskaside input:focus{
+  outline: 0;
+}
+.taskaside .taskentry{
+  padding: 10px;
+}
+.taskaside .taskcontainer{
+  list-style-type: none;
+  margin: 0 12px;
+  padding: 0;
+  border-radius: 40px;
+}
+.taskaside li{
+  background-color: #03152533;
+  margin-bottom: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  animation: slide-up 0.1s linear forwards;
+  position: relative;
+}
+.taskaside .closetask{
+  background-color: rgb(184, 91, 91);
+  padding: 5px 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.closetask:hover{
+  background-color: red;
+}
+.taskaside .taskerbtn{
+padding: 7px;
+width:70px;
+margin: 6px 0;
+border: 0;
+background-color: rgba(18, 19, 24, 0.5);
+color: white;
+cursor: pointer;
+}
+.taskaside .taskerbtn:hover{
+  background-color: rgb(7, 8, 10, 0.5);
+  color: rgba(241, 241, 243, 0.5);
+}
+.taskaside .clearbtn{
+padding: 7px;
+width:70px;
+margin: 6px 0;
+border: 0;
+background-color: rgba(18, 19, 24, 0.5);
+color: white;
+cursor: pointer;
+position: absolute;
+transform: translate(270px,-52px);
+
+}
+.taskaside .clearbtn:hover{
+  background-color: rgb(7, 8, 10, 0.5);
+  color: rgba(241, 241, 243, 0.5);
+}
+.taskcontainer .mark{
+  background-color: white;
+  height: 1px;
+  width: 0px;
+  position: absolute;
+}
+.mark.stroke{
+  animation: sword 1.2s linear forwards;
+}
+
+.clearbtn:focus,.taskerbtn:focus{
+  outline: 0;
+}
+
+
+@keyframes blinkingText{
+  0%{     color: black;}
+  49%{    color: black;}
+  60%{    color: red;}
+  99%{    color:red;}
+  100%{   color: red;}
+}
+@keyframes sword{
+  0%{width: 0px;}
+  50%{width: 90px;}
+  100%{width: 195px;}
+}
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

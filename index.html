@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4f0345ee3d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>CLOCK</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar">
+  <div class="clock" id="clock">11.37 AM</div>
+  
+  <div class="drops" id="drops">
+    <button class="weatherbtn" id="weatherbtn">Weather <i class="fas fa-sort-down"></i></button>
+    <button class="reminderbtn" id="reminderbtn">Add Reminders <i class="fas fa-sort-down"></i></button>
+  </div>
+  
+  <button class="taskbtn" id="taskbtn">To Do <i class="fas fa-chevron-right"></i></button>
+  </nav>
+  
+   <!-- Display -->
+   <div class="display" id="display">
+    <!-- weather display -->
+    <div class="weatherdisplay" id="weatherdisplay">
+      <figure id="weathericons" class="weathericons">
+        <canvas id="cons" width="64" height="64"></canvas>
+      </figure>
+      <div class="feelslike" id="feelslike"></div>
+      <div class="temperature" id="temperature"></div>
+      <div class="area" id="area">Kulathara</div>
+    </div>
+    
+    <!-- reminderinput -->
+    <form class="reminput" id="reminput">
+      <input type="text" placeholder="Please add reminders for today....." id="inputtext" class="inputtext">
+      <input type="number" placeholder="Hrs" id="hour" class="hour" max="12" min='0'>
+      <input type="number" placeholder="Mins" id="minutes" class="minutes" max="59" min='0'>
+      <select name="" id="format" class="format">
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <button class="rembtn" type="submit" id="rembtn">Add Reminder</button>
+    </form>
+  </div>
+
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+  <!-- reminders -->
+  <div class="gallerycontainer">
+  <div class="reminders">
+    <ul class="remindercontainer" id="remindercontainer"></ul>
+  </div>
+  <!-- quotes -->
+  <div class="quotecontainer" id="quotecontainer">
+  <p class="quoteparah" id="quoteparah"></p>
+  <p class="quoteauthor" id="quoteauthor"></p>
+  </div>
+  
+  </div>
+
+
+  </section>
+
+ <!-- Task Container -->
+  <aside class="taskaside" id="taskaside">
+    <h3>To Do</h3>
+    <form class="taskentry" id="taskentry">
+     <input type="text" placeholder="Please add task" id="taskinput" class="taskinput" maxlength="25">
+     <button type="submit" class="taskerbtn" id="taskerbtn">Add</button>
+    </form>
+    <button class="clearbtn" id="clearbtn">Clear All</button>
+    <ul class="taskcontainer" id="taskcontainer"></ul>
+
+  </aside>
+   
+    <audio src="./alarm_beeps.mp3" id="song" ></audio>
+
+
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="sky.js"></script>
+  <script src="./skycons.js"></script>
+</body>
+</html>
