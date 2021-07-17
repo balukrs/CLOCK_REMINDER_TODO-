@@ -1,6 +1,6 @@
 # CLOCK_REMINDER_TODO
 An advanced clock with the ability to add reminders and to create and edit ToDo.
-
+Its also shows local weather based on user location.
 
 The web app is made using pure vanilla JS with HTML and CSS.
 The web app gives the user ability to add reminders and save ToDo's.
